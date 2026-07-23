@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDEX LEMINE</title>
+    <meta name="description" content="Catálogo grossista LUDEX LEMINE. Distribuidores regionais de açúcar SOBA, óleo alimentar, lubrificantes e combustíveis Eiffel em Angola.">
+    <!-- Anti-flash: apply saved theme before CSS paints -->
+    <script>(function(){var t=localStorage.getItem('ludex_theme'),d=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d))document.documentElement.setAttribute('data-theme','dark');}());</script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="header-bar">
+            <button class="menu-trigger" id="menuTrigger" aria-label="Abrir Menu">
+                ☰
+            </button>
+            <a href="#" class="logo-container" aria-label="LUDEX LEMINE Home">
+                <img src="images/logo.png" alt="LUDEX LEMINE Logo">
+            </a>
+            <div class="header-actions">
+                <button class="header-icon-btn theme-toggle-btn" id="headerThemeToggleBtn" aria-label="Mudar para Modo Escuro">🌙</button>
+                <button class="header-icon-btn" id="searchToggleBtn" aria-label="Pesquisar">
+                    🔍
+                </button>
+                <button class="inquiry-badge-btn" id="inquiryBadgeBtn" title="Ver pedido de cotação">
+                    🛒 <span class="inquiry-count hidden" id="inquiryCountBadge">0</span>
+                </button>
+            </div>
+        </div>
+        <!-- Expandable Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <form class="search-overlay-form" id="searchForm" onsubmit="return false;">
+                <button type="button" class="search-back-btn" id="searchCloseBtn" aria-label="Fechar pesquisa">←</button>
+                <input type="text" class="search-overlay-input" id="searchInput" placeholder="Pesquisar produtos..." autocomplete="off">
+                <button type="submit" class="search-submit-btn" aria-label="Pesquisar">🔍</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- NAV DRAWER OVERLAY -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="nav-drawer" id="navDrawer" aria-label="Navegação principal">
+        <div class="drawer-header">
+            <h3>Navegação</h3>
+            <button class="close-btn" id="closeNavBtn" aria-label="Fechar menu">✕</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#catalogSection" onclick="setFilter('all');" class="active">Catálogo Completo</a></li>
+            <li><a href="#catalogSection" onclick="setFilter('sugar');">Açúcar SOBA</a></li>
+            <li><a href="#catalogSection" onclick="setFilter('oil');">Óleo Alimentar</a></li>
+            <li><a href="#catalogSection" onclick="setFilter('fuel');">Lubrificantes Eiffel</a></li>
+            <li><a href="#aboutSection">A Nossa História</a></li>
+            <li><a href="#contactSection">Contactos</a></li>
+        </ul>
+        <div class="nav-theme-footer">
+            <button class="theme-toggle-btn nav-theme-btn" aria-label="Mudar para Modo Escuro">🌙 Modo Escuro</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- TOP CATEGORIES SECTION -->
+        <section class="top-categories-section" id="homeSection">
+            <h2 class="section-title">Categorias Principais</h2>
+            <div class="categories-grid">
+                <div class="category-card sugar" data-category="sugar">
+                    <div class="category-icon">🌾</div>
+                    <div class="category-info">
+                        <h3>Açúcar Grosso</h3>
+                        <p>Fardos SOBA de 80 unidades</p>
+                    </div>
+                </div>
+                <div class="category-card oil" data-category="oil">
+                    <div class="category-icon">🫙</div>
+                    <div class="category-info">
+                        <h3>Óleo de Soja</h3>
+                        <p>Fardos SOBA de 100 saquetas</p>
+                    </div>
+                </div>
+                <div class="category-card fuel" data-category="fuel">
+                    <div class="category-icon">🛢️</div>
+                    <div class="category-info">
+                        <h3>Lubrificantes & Combustível</h3>
+                        <p>Gama Industrial Eiffel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATALOG SECTION -->
+        <section id="catalogSection">
+            <h2 class="section-title">Nosso Catálogo Grossista</h2>
+            <div class="catalog-filter-bar">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="sugar">Açúcar</button>
+                    <button class="filter-btn" data-filter="oil">Óleo Alimentar</button>
+                    <button class="filter-btn" data-filter="fuel">Lubrificantes</button>
+                </div>
+                <div class="catalog-stats">
+                    <span id="catalogStatsText">A mostrar 5 de 5 produtos</span>
+                </div>
+            </div>
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Products rendered by JS -->
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section class="about-section" id="aboutSection">
+            <div class="about-content">
+                <h2>LUDEX LEMINE - Tradição e Confiança Regional</h2>
+                <p>A <strong>LUDEX LEMINE - Comércio e Indústria, Lda</strong> é uma instituição estabelecida e reconhecida pelo abastecimento contínuo de bens de consumo de primeira necessidade a grosso. Com raízes profundas na comunidade e infraestruturas robustas, garantimos a distribuição estável de açúcar refinado, óleos alimentares embalados de alta qualidade, combustíveis e lubrificantes essenciais para o comércio regional, frotas e indústrias locais.</p>
+                <p>O nosso compromisso reside na qualidade assegurada e na entrega fidedigna de fardos comerciais e contentores industriais. Não somos apenas um distribuidor comercial; somos o parceiro de crescimento e sustentabilidade das maiores cadeias locais e armazéns da região.</p>
+                <div class="about-features">
+                    <div class="feature-box">
+                        <h4>Distribuição Segura</h4>
+                        <p>Logística robusta de frotas e fornecimento estável.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Produtos de Alta Qualidade</h4>
+                        <p>Embalagens Industriais SOBA e Eiffel Lubricants originais.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/logo.png" alt="Logótipo LUDEX LEMINE">
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contactSection">
+        <div class="footer-container">
+            <!-- Column 1: Brand Info -->
+            <div class="footer-brand">
+                <h2>LUDEX LEMINE, Lda</h2>
+                <p>Comércio e Indústria - O vosso parceiro de fornecimento a grosso tradicional e de confiança.</p>
+                <img src="images/logo.png" alt="Logotipo LUDEX LEMINE"
+                    style="height: 60px; object-fit: contain; margin-top: 10px;">
+            </div>
+            <!-- Column 2: Navigation Links -->
+            <div>
+                <h3 class="footer-section-title">Links Úteis</h3>
+                <ul class="footer-links">
+                    <li><a href="#catalogSection" onclick="setFilter('all');">Catálogo Completo</a></li>
+                    <li><a href="#catalogSection" onclick="setFilter('sugar');">Açúcar SOBA</a></li>
+                    <li><a href="#catalogSection" onclick="setFilter('oil');">Óleo Alimentar</a></li>
+                    <li><a href="#catalogSection" onclick="setFilter('fuel');">Lubrificantes Eiffel</a></li>
+                    <li><a href="#aboutSection">A Nossa História</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: Contacts (Tappable) -->
+            <div>
+                <h3 class="footer-section-title">Departamento Comercial</h3>
+                <ul class="footer-contacts-list">
+                    <li>
+                        <i>📞</i>
+                        <div>
+                            <div style="font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Telefone / WhatsApp</div>
+                            <a href="tel:937304805" class="footer-phone-link">937 304 805</a><br>
+                            <a href="tel:949845948" class="footer-phone-link">949 845 948</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i>📍</i>
+                        <div>
+                            <strong>Sede Comercial:</strong><br>
+                            Zona Industrial, Armazém Principal<br>
+                            Angola
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 LUDEX LEMINE - Comércio e Indústria, Lda. Todos os direitos reservados.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos de Venda</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NAV DRAWER OVERLAY (inquiry) -->
+    <div class="inquiry-drawer-overlay" id="inquiryDrawerOverlay"></div>
+    <aside class="inquiry-drawer" id="inquiryDrawer" aria-label="Lista de pedido">
+        <div class="drawer-header">
+            <h3>🛒 Lista de Pedido</h3>
+            <button class="close-btn" id="closeInquiryDrawerBtn" aria-label="Fechar">✕</button>
+        </div>
+        <div class="drawer-body">
+            <p class="drawer-subtitle">Selecione os produtos e envie o seu pedido diretamente por WhatsApp.</p>
+            <div class="inquiry-list-container" id="inquiryListContainer">
+                <!-- Items rendered by JS -->
+            </div>
+            <div class="drawer-whatsapp-footer hidden" id="drawerWhatsappFooter">
+                <div class="order-total-row" id="drawerTotalRow"></div>
+                <button class="whatsapp-send-btn" onclick="sendOrderViaWhatsApp()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Enviar Pedido por WhatsApp
+                </button>
+                <p class="drawer-whatsapp-note">Será redirecionado para o WhatsApp com o seu pedido pronto a enviar.</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- PRODUCT QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 id="modalTitle">Nome do Produto</h3>
+                <button class="close-btn" id="closeModalBtn" aria-label="Fechar">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div class="modal-gallery-container">
+                        <div class="modal-main-image" id="modalMainImg">
+                            <img src="" id="modalMainImgElem" alt="Produto">
+                        </div>
+                        <div class="modal-thumbnails" id="modalThumbnails"></div>
+                    </div>
+                    <div class="modal-info">
+                        <span class="modal-category-tag" id="modalCategory">Categoria</span>
+                        <p class="modal-desc" id="modalDesc">Descrição do produto...</p>
+
+                        <table class="modal-specs-table">
+                            <tbody id="modalSpecsBody">
+                                <!-- Specs rows injected dynamically -->
+                            </tbody>
+                        </table>
+
+                        <div class="modal-pricing-box">
+                            <span class="modal-price-label">Preço Grossista</span>
+                            <span class="modal-price-val" id="modalPriceVal">$0.00 <span id="modalPriceUnit"
+                                    style="font-size: 13px; color: #4a5568;">/ Unidade</span></span>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button class="card-btn btn-accent-green" id="modalSubmitBtn">
+                                🛒 Adicionar à Lista
+                            </button>
+                            <button class="card-btn btn-secondary"
+                                onclick="document.getElementById('modalOverlay').classList.remove('active')">
+                                Voltar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
