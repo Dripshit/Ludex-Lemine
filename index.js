@@ -593,7 +593,7 @@ window.sendOrderViaWhatsApp = function() {
     msg += `Poderia enviar-me uma cotacao? Obrigado.`;
 
     const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/244937304805?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/244937324009?text=${encoded}`, '_blank');
 
     // Clear cart and update UI
     inquiryCart = [];
